@@ -30,17 +30,16 @@ O pipeline segue o modelo ETL (Extract, Transform, Load):
 └── README.md          # Este arquivo
 ```
  
-## 🚀 Como Executar o Projeto
+## 🚀 Como o Projeto foi Executado
  
 ### 1. Pré-requisitos
  
 - Docker Desktop instalado
 - Python 3.12+
-- API Key do OpenWeatherMap (Opcional)
+- API Key do OpenWeatherMap
 - WSL2 no Windows
-### 2. Configuração do Banco de Dados
- 
-Execute os comandos abaixo no PostgreSQL:
+
+### 2. Configuração do Banco de Dados com PostgreSQL
  
 ```sql
 CREATE USER seu_usuario WITH PASSWORD 'sua_senha';
@@ -50,7 +49,7 @@ CREATE DATABASE weather_data OWNER seu_usuario;
  
 ### 3. Variáveis de Ambiente
  
-Crie um arquivo `.env` dentro da pasta `config/`:
+Foi criado arquivo `.env` dentro da pasta `config/`:
  
 ```env
 user=seu_usuario
@@ -65,7 +64,7 @@ api_key=sua_chave_da_api
  
 Na raiz do projeto:
  
-#### (Opcional) Ambiente virtual com UV
+####  Ambiente virtual com UV
  
 ```bash
 uv init
@@ -78,13 +77,13 @@ uv venv
 docker compose up -d
 ```
  
-Acesse o Airflow em: **http://localhost:8080**
+Acesso o Airflow em: **http://localhost:8080**
  
 Usuário/Senha padrão: `airflow`
  
 ## ⚙️ Pipeline (DAG)
  
-A DAG `YouTube_Weather_Pipeline` é executada a cada 1 hora.
+A DAG `Weather_Pipeline` é executada a cada 1 hora.
  
 ### 🔹 Etapas:
  
